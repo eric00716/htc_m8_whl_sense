@@ -67,10 +67,19 @@ done
 PATH=$PATH:/home/zaichron-lin/AndroidDev/AAtoolchains/linaro_toolchains_2014/arm-cortex_a15-linux-gnueabihf-linaro_4.9.1-2014.05/bin
 
 #xxx= Your config name
+echo
+echo
+echo " Run defconfig "
 make ARCH=arm m8whl_defconfig
 #Keep thangs sqeaky
+echo
+echo
+echo " Makin thangs squeaky clean "
 make clean
 #Change arm-eabi- to what you current toolchain uses default is gcc4.6 & gcc4.7 toolchains
+echo
+echo
+echo " Set to arm at 375, for about 20 to 40 minutes "
 make ARCH=arm CROSS_COMPILE=$toolchainDir/bin/arm-cortex_a15-linux-gnueabihf- -j$threads
 
 echo
@@ -92,14 +101,39 @@ echo
 #mkdir zip2/kernel
 #mkdir zip2/modules
 #cp arch/arm/boot/zImage zip2/kernel/
+
+echo
+echo
+echo " Moved zImage "
 cp arch/arm/boot/zImage ~/AndroidDev/AAmkbootimg_tools/venom
 #cp arch/arm/boot/dt.img zip2/kernel/
+
+echo
+echo
+echo " Moved dt.img "
 cp arch/arm/boot/dt.img ~/AndroidDev/AAmkbootimg_tools/venom
+
+echo
+echo
+echo " Moving modules "
 find -iname *.ko | xargs cp -t ~/Desktop/Copy/AndroidDev/Kernz/m8whl/MassStashedX_v17.0.3/system/lib/modules
 cd ~/AndroidDev/AAmkbootimg_tools
+
+echo
+echo
+echo " Making a boot.img ya'll "
 ./mkboot venom boot.img
+
+echo
+echo
+echo " Moved boot.img "
 cp boot.img ~/Desktop/Copy/AndroidDev/Kernz/m8whl/MassStashedX_v17.0.3/boot
+
 cd ~/Desktop/Copy/AndroidDev/Kernz/m8whl/MassStashedX_v17.0.3
+
+echo
+echo
+echo " I a make a da zip now, then move that ish to copy out dir "
 zip -r $kernelName-$now *
 mv $kernelName-$now.zip $exportDir
 #cd ..
