@@ -34,7 +34,6 @@ deps_config := \
 	fs/nfsd/Kconfig \
 	fs/nfs/Kconfig \
 	fs/exofs/Kconfig.ore \
-	fs/f2fs/Kconfig \
 	fs/exofs/Kconfig \
 	fs/ufs/Kconfig \
 	fs/sysv/Kconfig \
@@ -63,7 +62,6 @@ deps_config := \
 	fs/configfs/Kconfig \
 	fs/sysfs/Kconfig \
 	fs/proc/Kconfig \
-	fs/exfat/Kconfig \
 	fs/ntfs/Kconfig \
 	fs/fat/Kconfig \
 	fs/udf/Kconfig \
