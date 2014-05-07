@@ -1,1 +1,1 @@
-#define UTS_RELEASE "3.4.0-g6d8cbed-dirty"
+#define UTS_RELEASE "3.4.0-ElementalX-0.8"
