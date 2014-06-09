@@ -84,17 +84,23 @@ echo " Now the kernel is going to get packaged in a flashable zip yo"
 
 echo
 echo
-mkdir zip2
-mkdir zip2/kernel
-mkdir zip2/modules
-cp arch/arm/boot/zImage zip2/kernel/
-cp arch/arm/boot/dt.img zip2/kernel/
-find -iname *.ko | xargs cp -t zip2/modules
-cd zip2
+#mkdir zip2
+#mkdir zip2/kernel
+#mkdir zip2/modules
+#cp arch/arm/boot/zImage zip2/kernel/
+cp arch/arm/boot/zIamge ~/AndroidDev/AAmkbootimg_tools/venom
+#cp arch/arm/boot/dt.img zip2/kernel/
+cp arch/arm/boot/dt.img ~/AndroidDev/AAmkbootimg_tools/venom
+find -iname *.ko | xargs cp -t ~/Desktop/Copy/AndroidDev/Kernz/m8whl/MassStashedX_v17.0.3/system/lib/modules
+cd ~/AndroidDev/AAmkbootimg_tools
+./mkboot venom boot.img
+cp boot.img ~/Desktop/Copy/AndroidDev/Kernz/m8whl/MassStashedX_v17.0.3/boot
+cd ~/Desktop/Copy/AndroidDev/Kernz/m8whl/MassStashedX_v17.0.3
 zip -r $kernelName-$now *
 mv $kernelName-$now.zip $exportDir
-cd ..
-rm -r zip2
+#cd ..
+cd ~/AndroidDev/m8whl_kernel
+#rm -r zip2
 cd $DIR
 echo
 echo
