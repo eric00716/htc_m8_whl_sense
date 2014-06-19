@@ -1,8 +1,6 @@
 	.cpu cortex-a15
 	.fpu softvfp
-	.eabi_attribute 20, 1	@ Tag_ABI_FP_denormal
-	.eabi_attribute 21, 1	@ Tag_ABI_FP_exceptions
-	.eabi_attribute 23, 3	@ Tag_ABI_FP_number_model
+	.eabi_attribute 23, 1	@ Tag_ABI_FP_number_model
 	.eabi_attribute 24, 1	@ Tag_ABI_align8_needed
 	.eabi_attribute 25, 1	@ Tag_ABI_align8_preserved
 	.eabi_attribute 26, 2	@ Tag_ABI_enum_size
@@ -26,40 +24,43 @@
 @ -include /home/zaichron-lin/AndroidDev/m8whl_kernel/include/linux/kconfig.h
 @ -MD kernel/.bounds.s.d kernel/bounds.c -mlittle-endian -marm
 @ -mabi=aapcs-linux -mno-thumb-interwork -mcpu=cortex-a15 -mfloat-abi=soft
-@ -mfpu=neon-vfpv4 -mtls-dialect=gnu -auxbase-strip kernel/bounds.s -g -Os
-@ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs
-@ -Werror=implicit-function-declaration -Wno-format-security
+@ -mtune=cortex-a15 -mfpu=neon-vfpv4 -mtls-dialect=gnu
+@ -auxbase-strip kernel/bounds.s -g -Os -Wall -Wundef -Wstrict-prototypes
+@ -Wno-trigraphs -Werror=implicit-function-declaration -Wno-format-security
 @ -Wno-maybe-uninitialized -Wframe-larger-than=1024
 @ -Wno-unused-but-set-variable -Wdeclaration-after-statement
 @ -Wno-pointer-sign -fno-strict-aliasing -fno-common
 @ -fno-delete-null-pointer-checks -fno-dwarf2-cfi-asm -fstack-protector
 @ -funwind-tables -fomit-frame-pointer -fno-strict-overflow
-@ -fconserve-stack -fverbose-asm
-@ options enabled:  -faggressive-loop-optimizations -fauto-inc-dec
-@ -fbranch-count-reg -fcaller-saves -fcombine-stack-adjustments
-@ -fcompare-elim -fcprop-registers -fcrossjumping -fcse-follow-jumps
-@ -fdefer-pop -fdevirtualize -fdevirtualize-speculatively -fearly-inlining
+@ -fconserve-stack -fgcse-lm -fgcse-sm -fsched-spec-load -ffast-math
+@ -fsingle-precision-constant -fverbose-asm
+@ options enabled:  -faggressive-loop-optimizations -fassociative-math
+@ -fauto-inc-dec -fbranch-count-reg -fcaller-saves
+@ -fcombine-stack-adjustments -fcompare-elim -fcprop-registers
+@ -fcrossjumping -fcse-follow-jumps -fcx-limited-range -fdefer-pop
+@ -fdevirtualize -fdevirtualize-speculatively -fearly-inlining
 @ -feliminate-unused-debug-types -fexpensive-optimizations
-@ -fforward-propagate -ffunction-cse -fgcse -fgcse-lm -fgnu-runtime
-@ -fgnu-unique -fguess-branch-probability -fhoist-adjacent-loads -fident
-@ -fif-conversion -fif-conversion2 -findirect-inlining -finline
-@ -finline-atomics -finline-functions -finline-functions-called-once
-@ -finline-small-functions -fipa-cp -fipa-profile -fipa-pure-const
-@ -fipa-reference -fipa-sra -fira-hoist-pressure -fira-share-save-slots
-@ -fira-share-spill-slots -fisolate-erroneous-paths-dereference -fivopts
-@ -fkeep-static-consts -fleading-underscore -fmath-errno -fmerge-constants
-@ -fmerge-debug-strings -fmove-loop-invariants -fomit-frame-pointer
-@ -foptimize-sibling-calls -fpartial-inlining -fpeephole -fpeephole2
-@ -fprefetch-loop-arrays -freg-struct-return -freorder-blocks
+@ -ffinite-math-only -fforward-propagate -ffunction-cse -fgcse -fgcse-lm
+@ -fgcse-sm -fgnu-runtime -fgnu-unique -fguess-branch-probability
+@ -fhoist-adjacent-loads -fident -fif-conversion -fif-conversion2
+@ -findirect-inlining -finline -finline-atomics -finline-functions
+@ -finline-functions-called-once -finline-small-functions -fipa-cp
+@ -fipa-profile -fipa-pure-const -fipa-reference -fipa-sra
+@ -fira-hoist-pressure -fira-share-save-slots -fira-share-spill-slots
+@ -fisolate-erroneous-paths-dereference -fivopts -fkeep-static-consts
+@ -fleading-underscore -fmerge-constants -fmerge-debug-strings
+@ -fmove-loop-invariants -fomit-frame-pointer -foptimize-sibling-calls
+@ -fpartial-inlining -fpeephole -fpeephole2 -fprefetch-loop-arrays
+@ -freciprocal-math -freg-struct-return -freorder-blocks
 @ -freorder-functions -frerun-cse-after-loop
 @ -fsched-critical-path-heuristic -fsched-dep-count-heuristic
 @ -fsched-group-heuristic -fsched-interblock -fsched-last-insn-heuristic
 @ -fsched-pressure -fsched-rank-heuristic -fsched-spec
-@ -fsched-spec-insn-heuristic -fsched-stalled-insns-dep -fschedule-insns2
-@ -fsection-anchors -fshow-column -fshrink-wrap -fsigned-zeros
-@ -fsplit-ivs-in-unroller -fsplit-wide-types -fstack-protector
-@ -fstrict-volatile-bitfields -fsync-libcalls -fthread-jumps
-@ -ftoplevel-reorder -ftrapping-math -ftree-bit-ccp -ftree-builtin-call-dce
+@ -fsched-spec-insn-heuristic -fsched-spec-load -fsched-stalled-insns-dep
+@ -fschedule-insns2 -fsection-anchors -fshow-column -fshrink-wrap
+@ -fsingle-precision-constant -fsplit-ivs-in-unroller -fsplit-wide-types
+@ -fstack-protector -fstrict-volatile-bitfields -fsync-libcalls
+@ -fthread-jumps -ftoplevel-reorder -ftree-bit-ccp -ftree-builtin-call-dce
 @ -ftree-ccp -ftree-ch -ftree-coalesce-vars -ftree-copy-prop
 @ -ftree-copyrename -ftree-cselim -ftree-dce -ftree-dominator-opts
 @ -ftree-dse -ftree-forwprop -ftree-fre -ftree-loop-if-convert
@@ -67,10 +68,11 @@
 @ -ftree-parallelize-loops= -ftree-phiprop -ftree-pre -ftree-pta
 @ -ftree-reassoc -ftree-scev-cprop -ftree-sink -ftree-slsr -ftree-sra
 @ -ftree-switch-conversion -ftree-tail-merge -ftree-ter -ftree-vrp
-@ -funit-at-a-time -funwind-tables -fvar-tracking
-@ -fvar-tracking-assignments -fverbose-asm -fzero-initialized-in-bss -marm
-@ -mglibc -mlittle-endian -mlra -mpic-data-is-text-relative -msched-prolog
-@ -munaligned-access -mvectorize-with-neon-quad
+@ -funit-at-a-time -funsafe-math-optimizations -funwind-tables
+@ -fvar-tracking -fvar-tracking-assignments -fverbose-asm
+@ -fzero-initialized-in-bss -marm -mglibc -mlittle-endian -mlra
+@ -mpic-data-is-text-relative -msched-prolog -munaligned-access
+@ -mvectorize-with-neon-quad
 
 	.text
 .Ltext0:
@@ -484,14 +486,6 @@ foo:
 	.ascii	"PG_private\000"
 .LASF37:
 	.ascii	"__NR_PAGEFLAGS\000"
-.LASF53:
-	.ascii	"GNU C 4.9.1 20140505 (prerelease) -mlittle-endian -"
-	.ascii	"marm -mabi=aapcs-linux -mno-thumb-interwork -mcpu=c"
-	.ascii	"ortex-a15 -mfloat-abi=soft -mfpu=neon-vfpv4 -mtls-d"
-	.ascii	"ialect=gnu -g -Os -fno-strict-aliasing -fno-common "
-	.ascii	"-fno-delete-null-pointer-checks -fno-dwarf2-cfi-asm"
-	.ascii	" -fstack-protector -funwind-tables -fomit-frame-poi"
-	.ascii	"nter -fno-strict-overflow -fconserve-stack\000"
 .LASF48:
 	.ascii	"__MAX_NR_ZONES\000"
 .LASF39:
@@ -576,6 +570,16 @@ foo:
 	.ascii	"signed char\000"
 .LASF30:
 	.ascii	"PG_reclaim\000"
+.LASF53:
+	.ascii	"GNU C 4.9.1 20140505 (prerelease) -mlittle-endian -"
+	.ascii	"marm -mabi=aapcs-linux -mno-thumb-interwork -mcpu=c"
+	.ascii	"ortex-a15 -mfloat-abi=soft -mtune=cortex-a15 -mfpu="
+	.ascii	"neon-vfpv4 -mtls-dialect=gnu -g -Os -fno-strict-ali"
+	.ascii	"asing -fno-common -fno-delete-null-pointer-checks -"
+	.ascii	"fno-dwarf2-cfi-asm -fstack-protector -funwind-table"
+	.ascii	"s -fomit-frame-pointer -fno-strict-overflow -fconse"
+	.ascii	"rve-stack -fgcse-lm -fgcse-sm -fsched-spec-load -ff"
+	.ascii	"ast-math -fsingle-precision-constant\000"
 .LASF11:
 	.ascii	"_Bool\000"
 .LASF33:

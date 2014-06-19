@@ -34,6 +34,7 @@ deps_config := \
 	fs/nfsd/Kconfig \
 	fs/nfs/Kconfig \
 	fs/exofs/Kconfig.ore \
+	fs/f2fs/Kconfig \
 	fs/exofs/Kconfig \
 	fs/ufs/Kconfig \
 	fs/sysv/Kconfig \
@@ -62,6 +63,7 @@ deps_config := \
 	fs/configfs/Kconfig \
 	fs/sysfs/Kconfig \
 	fs/proc/Kconfig \
+	fs/exfat/Kconfig \
 	fs/ntfs/Kconfig \
 	fs/fat/Kconfig \
 	fs/udf/Kconfig \
@@ -105,6 +107,7 @@ deps_config := \
 	drivers/platform/msm/Kconfig \
 	drivers/platform/x86/Kconfig \
 	drivers/platform/Kconfig \
+	drivers/staging/cpupower/Kconfig \
 	drivers/staging/ozwpan/Kconfig \
 	drivers/staging/ramster/Kconfig \
 	drivers/staging/telephony/Kconfig \
