@@ -9,7 +9,7 @@ kernelDir1="/home/zaichron-lin/AndroidDev/m8whl_kernel" #( Example /home/user/pa
 kernelDir2="Path to kernel 2" #( Example /home/user/path )
 kernelDir3="Path to kernel 3" #( Example /home/user/path )
 #Toolchain path
-toolchainDir="/home/zaichron-lin/AndroidDev/AAtoolchains/linaro_toolchains_2014/arm-cortex_a15-linux-gnueabihf-linaro_4.9.1-2014.05" #( Example /home/user/path )
+toolchainDir="/home/zaichron-lin/AndroidDev/AAtoolchains/linaro_toolchains_2014/arm-cortex_a15-linux-gnueabihf-linaro_4.9.1-2014.06" #( Example /home/user/path )
 #Path where you would like the kernel to be outputed
 exportDir="/home/zaichron-lin/Desktop/Copy/AndroidDev/Kernz/m8whl/out" #( Example /home/user/Desktop )
 #Change default to what ever you like
@@ -17,7 +17,7 @@ kernel1name="MassStashedX"
 kernel2name="Default-2"
 kernel3name="Default-3"
 #Do not edit
-now=$(date +"%Y-%m-%d")
+now=$(date +"%m-%d-%Y-%H-%M")
 threads=$(expr 2 + $(grep processor /proc/cpuinfo | wc -l))
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -64,7 +64,7 @@ select opt in $OPTIONS; do
 done
 
 #Setup proper path to rid missing gcc warning
-PATH=$PATH:/home/zaichron-lin/AndroidDev/AAtoolchains/linaro_toolchains_2014/arm-cortex_a15-linux-gnueabihf-linaro_4.9.1-2014.05/bin
+PATH=$PATH:/home/zaichron-lin/AndroidDev/AAtoolchains/linaro_toolchains_2014/arm-cortex_a15-linux-gnueabihf-linaro_4.9.1-2014.06/bin
 
 #xxx= Your config name
 echo
