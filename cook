@@ -17,7 +17,7 @@ kernel1name="MassStashedX"
 kernel2name="Default-2"
 kernel3name="Default-3"
 #Do not edit
-now=$(date +"%Y-%m-%d")
+now=$(date +"%m-%d-%Y-%T")
 threads=$(expr 2 + $(grep processor /proc/cpuinfo | wc -l))
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
