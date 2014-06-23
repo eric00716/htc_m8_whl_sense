@@ -1,1 +1,1 @@
-#define UTS_RELEASE "3.4.0-ElementalX-0.17"
+#define UTS_RELEASE "3.4.0-MassStashedX-0.19.1"
