@@ -13,7 +13,7 @@ toolchainDir="/home/zaichron-lin/AndroidDev/AAtoolchains/linaro_toolchains_2014/
 #Path where you would like the kernel to be outputed
 exportDir="/home/zaichron-lin/Desktop/Copy/AndroidDev/Kernz/m8whl/out" #( Example /home/user/Desktop )
 #Change default to what ever you like
-kernel1name="MassStashedX"
+kernel1name="MassStashedX-m8whl-v0.19.1"
 kernel2name="Default-2"
 kernel3name="Default-3"
 #Do not edit
@@ -116,7 +116,7 @@ cp arch/arm/boot/dt.img ~/AndroidDev/AAmkbootimg_tools/venom
 echo
 echo
 echo " Moving modules "
-find -iname *.ko | xargs cp -t ~/Desktop/Copy/AndroidDev/Kernz/m8whl/MassStashedX_v17.0.3/system/lib/modules
+find -iname *.ko | xargs cp -t ~/Desktop/Copy/AndroidDev/Kernz/m8whl/MassStashedX_v0.19.1/system/lib/modules
 cd ~/AndroidDev/AAmkbootimg_tools
 
 echo
@@ -127,9 +127,9 @@ echo " Making a boot.img ya'll "
 echo
 echo
 echo " Moved boot.img "
-cp boot.img ~/Desktop/Copy/AndroidDev/Kernz/m8whl/MassStashedX_v17.0.3/boot
+cp boot.img ~/Desktop/Copy/AndroidDev/Kernz/m8whl/MassStashedX_v0.19.1/boot
 
-cd ~/Desktop/Copy/AndroidDev/Kernz/m8whl/MassStashedX_v17.0.3
+cd ~/Desktop/Copy/AndroidDev/Kernz/m8whl/MassStashedX_v0.19.1
 
 echo
 echo
